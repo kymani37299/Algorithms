@@ -7,7 +7,6 @@ public class Problem2 {
 // There is a graph with n nodes. Find number of paths
 // from 0-th to (n-1)-th node where paths dont share same nodes
 	
-	// TODO : There is mistake in process of making g
 	//For every node make mode in and out, and weight between them 1,then calculate flow
 	private static int sol(int graph[][]) {
 		int m = graph.length;
@@ -30,7 +29,7 @@ public class Problem2 {
 		for(int i=1;i<m-1;i++) { //Inner weights
 			g[i*2-1][i*2] = 1;
 		}
-		return Flow.fordFulkerson(g, 0, m-1);
+		return Flow.fordFulkerson(g, 0, 2*(m-1)-1);
 	}
 	
 	public static void main(String[] args) {

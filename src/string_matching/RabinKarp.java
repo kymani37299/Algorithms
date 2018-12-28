@@ -21,26 +21,29 @@ public class RabinKarp {
 		int n = str.length();
 		int m = pattern.length();
 		
-		long base = p;
+		long base = 1;
 		long patHash = 0;
 		for(int i=0;i<m;i++) {
 			patHash += (pattern.charAt(i)*base)%M;
 			base *= p%M;
 		}
 		
-		base = p;
+		base = 1;
 		
-		long hashTable[] = new long[n+1];
-		hashTable[0] = 0;
-		for(int i=1;i<=n;i++) {
-			hashTable[i] = (str.charAt(i-1)*base)%M;
-			base*=p%M;
+		long h = 0;
+		for(int i=0;i<m;i++) {
+			h += (str.charAt(i)*base)%M;
+			base *= p%M;
 		}
 		
-		for(int i=m;i<=n;i++) {
-			if(patHash == (hashTable[i]-hashTable[i-m])%M){
-				occurences.add(i);
-			}
+		if(h==patHash) {
+			occurences.add(0);
+		}
+		
+		for(int i=m;i<n;i++){
+			h -= (i-m)%M;
+			h += (str.charAt(i)*base)%M;
+			h /= p;
 		}
 		
 		return occurences;

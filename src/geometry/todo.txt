@@ -1,0 +1,24 @@
+To implement:
+
+Algorithms:
+Line intersection using sweep line
+Convex hull:
+	Jarvis
+	Quick hull
+	Graham
+	Divide and conquer
+Upper and lower envelope of polygon
+Tangent and extreme points of polygon
+Traiangualtion of monotone polygon
+Divide and conquer triangulation of simple polygon
+Voronoi diagram construction
+
+Data structures:
+KDTree
+Range tree
+Interval tree
+Segment tree
+
+	
+To understand then implement:
+	Kirkpatrick–Seidel convex hull
